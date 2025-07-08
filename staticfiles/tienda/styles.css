@@ -1,0 +1,379 @@
+:root {
+  --primary-color: #80d8c3;
+  --secondary-color: #ffffff;
+  --text-color: #000000;
+  --hover-color: #ffd66b;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+header {
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--primary-color);
+  position: relative;
+  /* para que el nav absoluto se posicione respecto a header */
+}
+
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Dancing Script', cursive;
+  z-index: 1;
+}
+
+.profile-icon {
+  cursor: pointer;
+  z-index: 1;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.2s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+.profile-icon {
+  cursor: pointer;
+}
+
+.profile-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--primary-color);
+  transition: fill 0.3s;
+}
+
+.profile-icon:hover svg {
+  fill: var(--hover-color);
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 6.5rem 2rem;
+  height: 400px;
+  background: url('https://img.freepik.com/vector-gratis/fondo-utiles-escolares-dibujados-mano_23-2150855728.jpg?semt=ais_items_boosted&w=740') center/cover no-repeat;
+  color: var(--secondary-color);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero h2,
+.hero p,
+.hero .btn {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.product-card {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  width: 250px;
+  padding: 1rem;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+
+  /* Para que todas tengan la misma altura y distribución vertical */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Altura mínima para uniformidad */
+  min-height: 400px;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  object-fit: contain;
+  height: 160px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* El botón con ancho completo y altura uniforme */
+.product-card .btn {
+  display: block;
+  width: 80%;
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 1rem;
+  /* Evitar que se reduzca demasiado */
+  flex-shrink: 0;
+}
+
+.precio {
+  color: #4DA8DA;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+
+.bible-verse {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-style: italic;
+}
+
+footer {
+  background-color: #333;
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: var(--secondary-color);
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--hover-color);
+}
+
+/* Hamburguesa oculta por defecto */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 2;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  display: block;
+  border-radius: 2px;
+}
+
+/* Menú móvil tipo modal deslizable */
+.slide-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: var(--secondary-color);
+  padding: 2rem 1rem;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.4s ease-in-out;
+  z-index: 100;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.slide-menu.active {
+  bottom: 0;
+}
+
+.slide-menu a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.slide-menu a:hover {
+  color: var(--hover-color);
+}
+
+.slide-menu .profile-icon {
+  display: block;
+  margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 10;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    display: block;
+    border-radius: 2px;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a,
+  nav .profile-icon {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  /* Ocultamos profile-icon fuera del nav para evitar duplicado */
+  .profile-icon {
+    display: none;
+  }
+
+  .hero {
+    height: auto;
+    padding: 4rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .products {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .product-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .product-card .btn {
+    width: 100%;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    font-size: 1.2rem;
+  }
+}
