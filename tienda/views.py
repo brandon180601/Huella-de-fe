@@ -22,7 +22,7 @@ def agregar_producto(request):
                 imagen=imagen,
                 precio=precio or 0
             )
-            return redirect('inicio')  # o a donde desees redirigir
+            return redirect('agregar_producto')  # o a donde desees redirigir
         else:
             error = "Por favor, llena todos los campos requeridos."
             return render(request, 'agregar_producto.html', {'error': error})
